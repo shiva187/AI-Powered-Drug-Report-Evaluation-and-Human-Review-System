@@ -1,0 +1,241 @@
+{
+  "dataset_name": "Synthetic Drug Report Extraction Benchmark",
+  "version": "1.0",
+  "notice": "All reports, company names, products, batches, dates, and test results are fictional and for software testing only. Acceptance ranges are illustrative assumptions, not pharmaceutical or regulatory standards. Ground truth for the conflict case sets assay_result to null because a single canonical value cannot be chosen safely.",
+  "reports": [
+    {
+      "file": "01_narrative_report.pdf",
+      "layout": "narrative prose",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": []
+    },
+    {
+      "file": "02_table_layout.pdf",
+      "layout": "table",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": []
+    },
+    {
+      "file": "03_alternate_terminology.pdf",
+      "layout": "alternate terminology",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": []
+    },
+    {
+      "file": "04_multipage_report.pdf",
+      "layout": "two-page report",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": []
+    },
+    {
+      "file": "05_missing_expiry.pdf",
+      "layout": "missing required field",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": null,
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": [
+        "expiry_date_missing"
+      ]
+    },
+    {
+      "file": "06_conflicting_assay_values.pdf",
+      "layout": "conflicting values",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": null,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": [
+        "assay_result_conflict",
+        "human_review_required"
+      ]
+    },
+    {
+      "file": "07_varied_units.pdf",
+      "layout": "varied units",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": [
+        "unit_normalization_required"
+      ]
+    },
+    {
+      "file": "08_out_of_range_assay.pdf",
+      "layout": "out-of-range result",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 91.4,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": [
+        "assay_out_of_range"
+      ]
+    },
+    {
+      "file": "09_invalid_dates.pdf",
+      "layout": "invalid date values",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-13-40",
+        "expiry_date": "2025-02-30",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": [
+        "manufacturing_date_invalid",
+        "expiry_date_invalid"
+      ]
+    },
+    {
+      "file": "10_scanned_image_only.pdf",
+      "layout": "image-only scanned page",
+      "ground_truth": {
+        "drug_name": "Paracetamol",
+        "manufacturer": "Northstar Therapeutics (SYNTHETIC)",
+        "product_code": "NST-PAR-500",
+        "dosage_form": "Tablet",
+        "strength": "500 mg",
+        "batch_number": "NSP-26-041",
+        "manufacturing_date": "2026-01-15",
+        "expiry_date": "2028-01-14",
+        "assay_result": 99.2,
+        "assay_min_limit": 95.0,
+        "assay_max_limit": 105.0,
+        "purity_result": 99.6,
+        "purity_min_limit": 98.0,
+        "moisture_result": 0.4,
+        "moisture_max_limit": 1.0
+      },
+      "expected_issues": [
+        "ocr_required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+streamlit>=1.36
+requests>=2.31
+python-dotenv>=1.0
+pydantic>=2.7
+PyMuPDF>=1.24
+reportlab>=4.2
+langgraph>=0.2.0
+
+# Optional OCR for image-only PDF pages (also install the Tesseract OS binary)
+pytesseract>=0.3.10
+Pillow>=10.0
