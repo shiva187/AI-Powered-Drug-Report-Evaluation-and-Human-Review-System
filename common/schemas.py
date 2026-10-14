@@ -73,3 +73,4 @@ FIELD_LABELS = {
     "purity_min_limit": "Purity minimum (%)", "moisture_result": "Moisture result (%)",
     "moisture_max_limit": "Moisture maximum (%)",
 }
+
