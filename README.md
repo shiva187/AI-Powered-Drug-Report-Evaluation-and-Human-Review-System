@@ -114,3 +114,8 @@ A more varied test set is available under `data/synthetic_dataset/`:
 - `README.md`: dataset scope and caveats.
 
 Use this dataset to evaluate extraction quality. The image-only scan intentionally has no selectable PDF text and should be marked as requiring OCR. The conflicting-assay report intentionally has no single safe assay value and should be routed to human review. All documents and specifications are synthetic demonstration data, not official pharmaceutical standards or regulatory advice.
+
+## Video demo of Execution 
+```bash
+https://drive.google.com/file/d/15PtJV7E6QMf5-KzPLODdd4o3WqKgmGIq/view?usp=drive_link
+```
